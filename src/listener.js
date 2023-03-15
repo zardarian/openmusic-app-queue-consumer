@@ -12,6 +12,7 @@ class Listener {
   
         const songs = await this._playlistsService.getPlaylistSongs(credentialId, playlistId);
         const result = await this._mailSender.sendEmail(targetEmail, JSON.stringify(songs));
+        console.log(result);
       } catch (error) {
         console.error(error);
       }

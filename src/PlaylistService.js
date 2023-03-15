@@ -9,8 +9,8 @@ class PlaylistService {
     const playlist = await this.getPlaylist(playlistId, credentialId);
     const songs = await this.getSongs(playlistId);
     
-    const result = playlist
-    result.songs = songs
+    const result = { playlist: playlist }
+    result.playlist.songs = songs
 
     return result
   }
